@@ -1,0 +1,58 @@
+{
+	"name": "apple-app-site-association",
+	"description": "Check apple-app-site-association file",
+	"version": "0.1.0",
+	"type": "module",
+	"module": "dist/index.js",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./swcutil": {
+			"types": "./dist/swcutil.d.ts",
+			"default": "./dist/swcutil.js"
+		},
+		"./test": {
+			"types": "./dist/test.d.ts",
+			"default": "./dist/test.js"
+		},
+		"./types": {
+			"types": "./dist/types.d.ts",
+			"default": "./dist/types.js"
+		},
+		"./validate": {
+			"types": "./dist/validate.d.ts",
+			"default": "./dist/validate.js"
+		},
+		"./verify": {
+			"types": "./dist/verify.d.ts",
+			"default": "./dist/verify.js"
+		}
+	},
+	"files": ["dist"],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc",
+		"clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\"",
+		"prepare": "npm run clean && npm run build"
+	},
+	"keywords": [
+		"aasa",
+		"apple-app-site-association",
+		"swcutil",
+		"universal-links",
+		"test"
+	],
+	"author": "TOMIKAWA Sotaro",
+	"license": "MIT",
+	"packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387",
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/node": "^22.10.0",
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"valibot": "1.0.0-beta.8"
+	}
+}
