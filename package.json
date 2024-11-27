@@ -31,7 +31,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "tsc",
 		"clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\"",
-		"prepare": "npm run clean && npm run build"
+		"prepare": "npm run clean && npm run build",
+		"fmt": "biome check --write ."
 	},
 	"keywords": [
 		"aasa",

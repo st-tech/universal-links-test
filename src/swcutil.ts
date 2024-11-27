@@ -63,8 +63,7 @@ export type Result = {
 };
 
 export function swcutil(options: Options): Promise<Result> {
-	const res = spawn("sudo", [
-		"swcutil",
+	const res = spawn("swcutil", [
 		...buildSharedOptionArgs(options),
 		...buildCommandArgs(options),
 	]);
