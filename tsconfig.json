@@ -7,6 +7,7 @@
 		"outDir": "./dist",
 		"rootDir": "./src",
 		"declaration": true,
-		"verbatimModuleSyntax": true
+		"verbatimModuleSyntax": true,
+		"isolatedDeclarations": true
 	}
 }

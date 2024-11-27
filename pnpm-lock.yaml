@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      valibot:
-        specifier: 1.0.0-beta.8
-        version: 1.0.0-beta.8(typescript@5.7.2)
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.9.4
@@ -21,6 +17,12 @@ importers:
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
+
+  tests:
+    devDependencies:
+      apple-app-site-association:
+        specifier: workspace:*
+        version: link:..
 
 packages:
 
@@ -88,14 +90,6 @@ packages:
   undici-types@6.20.0:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
-  valibot@1.0.0-beta.8:
-    resolution: {integrity: sha512-OPAwJZtowb0j91b+bd77+ny7D1VVzsCzD7Jl9waLUlMprTsfI9Y3HHbW3hAQD7wKDKHsmGEesuiYWaYvcZL2wg==}
-    peerDependencies:
-      typescript: '>=5'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
 snapshots:
 
   '@biomejs/biome@1.9.4':
@@ -140,7 +134,3 @@ snapshots:
   typescript@5.7.2: {}
 
   undici-types@6.20.0: {}
-
-  valibot@1.0.0-beta.8(typescript@5.7.2):
-    optionalDependencies:
-      typescript: 5.7.2

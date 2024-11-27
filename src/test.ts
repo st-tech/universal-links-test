@@ -1,4 +1,4 @@
-import type { JsonOrPath, PromiseOr, VerifyResult } from "./types.js";
+import type { VerifyResult } from "./types.js";
 import { createVerifier } from "./verify.js";
 import { strictEqual } from "node:assert";
 
@@ -7,10 +7,9 @@ type Assert = {
 	universalLinks(map: Iterable<[string, VerifyResult]>): Promise<void>;
 };
 export function createAssert(
-	domain: string,
-	json: PromiseOr<JsonOrPath>,
+	...args: Parameters<typeof createVerifier>
 ): Assert {
-	const verify = createVerifier(domain, json);
+	const verify = createVerifier(...args);
 	const assertSingle: Assert["universalLink"] = async (path, expected) => {
 		const res = await verify(path);
 		strictEqual(res, expected, `Expected ${expected}, got ${res}. (${path})`);

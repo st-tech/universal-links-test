@@ -1,0 +1,9 @@
+{
+	"scripts": {
+		"test": "npm run test:node",
+		"test:node": "node --test node.test.mjs"
+	},
+	"devDependencies": {
+		"apple-app-site-association": "workspace:*"
+	}
+}

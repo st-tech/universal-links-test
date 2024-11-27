@@ -21,10 +21,6 @@
 			"types": "./dist/types.d.ts",
 			"default": "./dist/types.js"
 		},
-		"./validate": {
-			"types": "./dist/validate.d.ts",
-			"default": "./dist/validate.js"
-		},
 		"./verify": {
 			"types": "./dist/verify.d.ts",
 			"default": "./dist/verify.js"
@@ -51,8 +47,5 @@
 		"@biomejs/biome": "^1.9.4",
 		"@types/node": "^22.10.0",
 		"typescript": "^5.7.2"
-	},
-	"dependencies": {
-		"valibot": "1.0.0-beta.8"
 	}
 }
