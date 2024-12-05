@@ -1,7 +1,8 @@
 {
+	"type": "module",
 	"scripts": {
 		"test": "npm run test:node",
-		"test:node": "node --test node.test.mjs"
+		"test:node": "node --test --experimental-strip-types node.test.ts"
 	},
 	"devDependencies": {
 		"apple-app-site-association": "workspace:*"
