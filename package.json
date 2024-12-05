@@ -32,7 +32,8 @@
 		"build": "tsc",
 		"clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\"",
 		"prepare": "npm run clean && npm run build",
-		"fmt": "biome check --write ."
+		"fmt": "biome check --write .",
+		"check": "biome check ."
 	},
 	"keywords": [
 		"aasa",
