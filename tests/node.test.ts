@@ -1,8 +1,8 @@
 import * as assert from "node:assert";
 import { test } from "node:test";
 import {
-	verify,
 	type AppleAppSiteAssociation,
+	verify,
 } from "apple-app-site-association";
 
 const json = {
