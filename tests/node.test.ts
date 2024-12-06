@@ -4,6 +4,7 @@ import {
 	type AppleAppSiteAssociation,
 	verify,
 } from "apple-app-site-association";
+import { verify as verifySim } from "apple-app-site-association/sim";
 
 const json = {
 	applinks: {
@@ -20,11 +21,11 @@ const json = {
 } as const satisfies AppleAppSiteAssociation;
 
 test("/search/ should match", async () => {
-	const actual = await verify("example.com", "/search/", json);
-	assert.strictEqual(actual, "match");
+	assert.strictEqual(await verify(json, "/search/"), "match");
+	assert.strictEqual(await verifySim(json, "/search/"), "match");
 });
 
 test("#nondeeplinking should block", async () => {
-	const actual = await verify("example.com", "/search/#nondeeplinking", json);
-	assert.strictEqual(actual, "block");
+	assert.strictEqual(await verify(json, "/search/#nondeeplinking"), "block");
+	assert.strictEqual(await verifySim(json, "/search/#nondeeplinking"), "block");
 });

@@ -5,23 +5,18 @@ It works with `swcutil` command that is preinstalled in macOS.
 
 ## Usage
 
-Test universal links:
+The `verify` function detects provided path lauches the app or not.
 
-```sh
-# swcutil command requires root permission
-sudo node --test --experimental-strip-types # `--experimental-strip-types` is required node@22
-```
+It depends on the `swcutil` command, so you must use this function in macOS and root permission.
+(If you don't like it, you can use `apple-app-site-association/sim` instead that simulates the behavior.)
 
 ```typescript
-// test-universallinks.test.ts
-import * as assert from "node:assert";
-import { test } from "node:test";
 import { verify, type AppleAppSiteAssociation } from "apple-app-site-association";
+
 const json = { applinks: { /* ... */ } } satisfies AppleAppSiteAssociation;
-test("/search/ should match", async () => {
-	const actual: 'match' | 'block' | 'unset' = await verify("example.com", "/search/", json);
-	assert.strictEqual(actual, "match");
-});
+
+const result = await verify(json, "/universal-links/path?query#hash");
+console.log(result); // 'match' | 'block' | 'unset'
 ```
 
 Use `swcutil` command programmatically:

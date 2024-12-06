@@ -9,26 +9,15 @@
 			"types": "./dist/index.d.ts",
 			"default": "./dist/index.js"
 		},
-		"./swcutil": {
-			"types": "./dist/swcutil.d.ts",
-			"default": "./dist/swcutil.js"
+		"./sim": {
+			"types": "./dist/sim/index.d.ts",
+			"default": "./dist/sim/index.js"
 		},
-		"./test": {
-			"types": "./dist/test.d.ts",
-			"default": "./dist/test.js"
-		},
-		"./types": {
-			"types": "./dist/types.d.ts",
-			"default": "./dist/types.js"
-		},
-		"./verify": {
-			"types": "./dist/verify.d.ts",
-			"default": "./dist/verify.js"
-		}
+		"./*": "./dist/*"
 	},
 	"files": ["dist"],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "pnpm -r test",
 		"build": "tsc",
 		"clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\"",
 		"prepare": "npm run clean && npm run build",
