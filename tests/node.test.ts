@@ -1,10 +1,11 @@
-import * as assert from "node:assert";
-import { test } from "node:test";
 import {
 	type AppleAppSiteAssociation,
+	type JsonOrPath,
 	verify,
 } from "apple-app-site-association";
 import { verify as verifySim } from "apple-app-site-association/sim";
+import * as assert from "node:assert";
+import { test } from "node:test";
 
 const json = {
 	applinks: {
@@ -28,4 +29,11 @@ test("/search/ should match", async () => {
 test("#nondeeplinking should block", async () => {
 	assert.strictEqual(await verify(json, "/search/#nondeeplinking"), "block");
 	assert.strictEqual(await verifySim(json, "/search/#nondeeplinking"), "block");
+});
+
+test("empty json", async () => {
+	assert.strictEqual(await verify({}, "/"), "unset");
+	assert.strictEqual(await verifySim({}, "/"), "unset");
+	assert.strictEqual(await verify("{}", "/"), "unset");
+	assert.strictEqual(await verifySim("{}", "/"), "unset");
 });

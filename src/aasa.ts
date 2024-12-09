@@ -110,7 +110,8 @@ export type AppleAppSiteAssociation = {
 };
 export function validateAASA(aasa: unknown): aasa is AppleAppSiteAssociation {
 	if (!obj(aasa)) return false;
-	return "applinks" in aasa && validateApplinks(aasa.applinks);
+	if ("applinks" in aasa && !validateApplinks(aasa.applinks)) return false;
+	return true;
 }
 
 function obj(o: unknown) {
