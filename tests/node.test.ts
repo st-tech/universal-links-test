@@ -1,10 +1,7 @@
 import * as assert from "node:assert";
 import { test } from "node:test";
-import {
-	type AppleAppSiteAssociation,
-	verify,
-} from "apple-app-site-association";
-import { verify as verifySim } from "apple-app-site-association/sim";
+import { type AppleAppSiteAssociation, verify } from "universal-links-test";
+import { verify as verifySim } from "universal-links-test/sim";
 
 const json = {
 	applinks: {

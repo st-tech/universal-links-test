@@ -20,9 +20,9 @@
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "4.0.0-beta.6",
-		"apple-app-site-association": "workspace:*",
 		"lz-string": "^1.5.0",
 		"monaco-editor": "^0.52.0",
-		"tailwindcss": "4.0.0-beta.6"
+		"tailwindcss": "4.0.0-beta.6",
+		"universal-links-test": "workspace:*"
 	}
 }

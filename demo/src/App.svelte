@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createVerify } from "apple-app-site-association/sim";
+  import { createVerify } from "universal-links-test/sim";
   import Editor from "./Editor.svelte";
   import { getHash, parseHash } from "./hash";
 
@@ -38,7 +38,7 @@
 
 <div class="grid grid-rows-[auto_1fr] h-screen divide-y">
   <header class="flex justify-between p-4">
-    <h1 class="font-bold">apple-app-site-association check</h1>
+    <h1 class="font-bold">universal-links-test demo</h1>
     <div class="flex gap-2 items-center">
       <a
         href="http://github.com/st-tech/apple-app-site-association"

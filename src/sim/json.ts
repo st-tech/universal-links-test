@@ -12,8 +12,10 @@ export function resolveJson(
 
 async function resolveJsonPath(path: string): Promise<Record<string, unknown>> {
 	// Dyanmic import to make it portable for other environments
-	const { readFile } = await import("node:fs/promises");
-	const { cwd } = await import("node:process");
-	const { join } = await import("node:path");
+	const [{ readFile }, { cwd }, { join }] = await Promise.all([
+		import("node:fs/promises"),
+		import("node:process"),
+		import("node:path"),
+	]);
 	return JSON.parse(await readFile(join(cwd(), path), { encoding: "utf8" }));
 }

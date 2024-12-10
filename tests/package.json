@@ -5,6 +5,6 @@
 		"test:node": "node --test --experimental-strip-types node.test.ts"
 	},
 	"devDependencies": {
-		"apple-app-site-association": "workspace:*"
+		"universal-links-test": "workspace:*"
 	}
 }
