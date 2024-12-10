@@ -17,7 +17,7 @@
 	},
 	"files": ["dist"],
 	"scripts": {
-		"test": "pnpm -r test",
+		"test": "vitest src --run",
 		"build": "tsc",
 		"clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\"",
 		"prepare": "npm run clean && npm run build",
@@ -37,6 +37,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@types/node": "^22.10.0",
-		"typescript": "^5.7.2"
+		"typescript": "^5.7.2",
+		"vitest": "^2.1.8"
 	}
 }
