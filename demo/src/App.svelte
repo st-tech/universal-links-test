@@ -36,31 +36,39 @@
   let verify = $derived(createVerify(json));
 </script>
 
-<div class="grid grid-rows-[auto_1fr] h-full">
-  <header class="flex justify-between p-4 border-b border-gray-400">
+<div class="grid grid-rows-[auto_1fr] h-screen divide-y">
+  <header class="flex justify-between p-4">
     <h1 class="font-bold">apple-app-site-association check</h1>
-    <button
-      type="button"
-      onclick={() => {
-        const hash = getHash(
-          json,
-          paths.map((p) => p.value)
-        );
-        const url = new URL(location.href);
-        url.hash = hash;
-        window.history.replaceState(null, "", url.href);
-        navigator.clipboard.writeText(url.href).then(() => {
-          alert("URL copied to clipboard");
-        });
-      }}
-    >
-      Share
-    </button>
+    <div class="flex gap-2 items-center">
+      <a
+        href="http://github.com/st-tech/apple-app-site-association"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
+      <button
+        type="button"
+        onclick={() => {
+          const hash = getHash(
+            json,
+            paths.map((p) => p.value)
+          );
+          const url = new URL(location.href);
+          url.hash = hash;
+          window.history.replaceState(null, "", url.href);
+          navigator.clipboard.writeText(url.href).then(() => {
+            alert("URL copied to clipboard");
+          });
+        }}
+      >
+        Share
+      </button>
+    </div>
   </header>
-  <main class="grid grid-cols-2">
-    <Editor bind:value={json} />
-    <div class="p-4">
-      <h2 class="font-bold">Paths</h2>
+  <main class="grid md:grid-cols-2">
+    <div class="p-4 size-full bg-slate-100 md:order-last">
+      <h2 class="font-bold">Test Paths</h2>
       <ul class="grid grid-cols-[auto_1fr_auto] gap-1 font-mono">
         {#each paths as path (path.id)}
           <li class="contents">
@@ -74,10 +82,11 @@
               -
             </button>
             <span
-              class="grow focus-within:outline-2 outline-blue-400/50 rounded-sm"
+              class="grow bg-white focus-within:outline-2 outline-blue-400/50 rounded-sm"
             >
               <input
                 bind:value={path.value}
+                id={path.id}
                 class="p-1 border-b border-gray-300 size-full focus:outline-none"
                 type="text"
                 autocomplete="off"
@@ -87,9 +96,18 @@
             {#await verify(path.value)}
               <span>...</span>
             {:then result}
-              <output>{result}</output>
-            {:catch error}
-              <output>{error}</output>
+              <output
+                for={path.id}
+                class={result === "match"
+                  ? "text-emerald-700"
+                  : result === "block"
+                    ? "text-orange-600"
+                    : "text-gray-500"}
+              >
+                {result}
+              </output>
+            {:catch}
+              <output class="text-red-700">error</output>
             {/await}
           </li>
         {/each}
@@ -104,5 +122,6 @@
         </li>
       </ul>
     </div>
+    <Editor bind:value={json} />
   </main>
 </div>

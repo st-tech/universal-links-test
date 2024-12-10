@@ -2,6 +2,7 @@
   import * as monaco from "monaco-editor";
   import EditorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
   import JsonWorker from "monaco-editor/esm/vs/language/json/json.worker?worker";
+  import { debounce } from "./debounce";
   let ref = $state<HTMLDivElement>();
   let { value = $bindable("") } = $props();
   let editor = $state<monaco.editor.IStandaloneCodeEditor>();
@@ -35,4 +36,5 @@
   });
 </script>
 
+<svelte:window onresize={debounce(() => editor?.layout(), 100)} />
 <div bind:this={ref} class="size-full"></div>
