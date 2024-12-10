@@ -13,6 +13,9 @@ export const createVerify: CreateVerify = (json) => {
 		if (!details || details.length === 0) return "unset";
 
 		for (const detail of details) {
+			if (!detail.appID && (!detail.appIDs || detail.appIDs.length === 0))
+				continue;
+
 			const components = detail.components;
 			if (!components) continue;
 			for (const component of components) {
