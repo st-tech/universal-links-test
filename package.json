@@ -15,9 +15,7 @@
 		},
 		"./*": "./dist/*"
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"test": "pnpm -r test",
 		"build": "tsc",
