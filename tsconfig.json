@@ -10,5 +10,5 @@
 		"verbatimModuleSyntax": true,
 		"isolatedDeclarations": true
 	},
-	"exclude": ["dist", "tests", "demo"]
+	"exclude": ["dist", "tests", "demo", "src/**/*.spec.ts"]
 }

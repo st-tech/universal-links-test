@@ -8,9 +8,9 @@ export function stringToRegex(path: string, caseSensitive = false): RegExp {
 function stringToRegexString(str: string): string {
 	return (
 		str
+			.replace(/\\/g, "\\\\")
 			.replace(/\./g, "\\.")
 			.replace(/\+/g, "\\+")
-			.replace(/\\/g, "\\\\")
 			.replace(/\(/g, "\\(")
 			.replace(/\)/g, "\\)")
 			.replace(/\[/g, "\\[")
