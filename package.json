@@ -1,5 +1,5 @@
 {
-	"name": "apple-app-site-association",
+	"name": "universal-links-test",
 	"description": "Check apple-app-site-association file",
 	"version": "0.1.0",
 	"type": "module",
@@ -28,7 +28,7 @@
 		"aasa",
 		"apple-app-site-association",
 		"swcutil",
-		"universal-links",
+		"universal links",
 		"test"
 	],
 	"author": "TOMIKAWA Sotaro",

@@ -23,9 +23,6 @@ importers:
       '@tailwindcss/vite':
         specifier: 4.0.0-beta.6
         version: 4.0.0-beta.6(vite@6.0.3(@types/node@22.10.1)(jiti@2.4.1)(lightningcss@1.28.2))
-      apple-app-site-association:
-        specifier: workspace:*
-        version: link:..
       lz-string:
         specifier: ^1.5.0
         version: 1.5.0
@@ -35,6 +32,9 @@ importers:
       tailwindcss:
         specifier: 4.0.0-beta.6
         version: 4.0.0-beta.6
+      universal-links-test:
+        specifier: workspace:*
+        version: link:..
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.0.0
@@ -60,7 +60,7 @@ importers:
 
   tests:
     devDependencies:
-      apple-app-site-association:
+      universal-links-test:
         specifier: workspace:*
         version: link:..
 
