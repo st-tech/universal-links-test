@@ -1,0 +1,10 @@
+@import "tailwindcss";
+:root,
+body,
+#app {
+	@apply h-full;
+}
+button,
+[role="button"] {
+	@apply cursor-pointer;
+}

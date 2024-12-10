@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["dist"]
+		"ignore": ["dist", "*.svelte"]
 	},
 	"formatter": {
 		"enabled": true,

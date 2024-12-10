@@ -10,5 +10,5 @@
 		"verbatimModuleSyntax": true,
 		"isolatedDeclarations": true
 	},
-	"exclude": ["dist", "tests"]
+	"exclude": ["dist", "tests", "demo"]
 }
