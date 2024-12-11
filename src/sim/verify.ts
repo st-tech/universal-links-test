@@ -1,5 +1,5 @@
 import { validateAASA } from "../aasa.js";
-import type { CreateVerify, Verify } from "../types.js";
+import type { CreateVerify, ResultMap, Verify } from "../types.js";
 import { resolveJson } from "./json.js";
 import { match } from "./match.js";
 
@@ -10,7 +10,8 @@ export const createVerify: CreateVerify = (json) => {
 		const aasa = await aasaPromise;
 		if (!validateAASA(aasa)) throw new Error("Invalid AASA");
 		const details = aasa.applinks?.details;
-		if (!details || details.length === 0) return "unset";
+		const ret: ResultMap = new Map();
+		if (!details || details.length === 0) return ret;
 
 		for (const detail of details) {
 			if (!detail.appID && (!detail.appIDs || detail.appIDs.length === 0))
@@ -29,11 +30,27 @@ export const createVerify: CreateVerify = (json) => {
 					aasa.applinks?.defaults?.caseSensitive;
 
 				if (match(url, { ...component, percentEncoded, caseSensitive })) {
-					return component.exclude ? "block" : "match";
+					const res = component.exclude ? "block" : "match";
+					if (detail.appIDs) {
+						for (const appID of detail.appIDs) {
+							if (!ret.has(appID)) ret.set(appID, res);
+						}
+					} else if (detail.appID) {
+						if (!ret.has(detail.appID)) ret.set(detail.appID, res);
+					}
+					break;
 				}
 			}
 		}
-		return "unset";
+		return ret;
 	};
 };
+
+/**
+ * Verify the URL with the apple-app-site-association file.
+ * This function simulates the `swcutil` command behavior.
+ * @param json apple-app-site-association file content or path
+ * @param path URL to verify
+ * @returns Map of appID and match/block
+ */
 export const verify: Verify = (json, path) => createVerify(json)(path);
