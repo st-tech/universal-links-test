@@ -83,20 +83,20 @@
   <main class="grid md:grid-cols-[1fr_3fr]">
     <div class="p-4 size-full bg-slate-100 md:order-last">
       <h2 class="font-bold">Test Paths</h2>
-      <table class="w-full font-mono">
+      <table class="w-full font-mono border-spacing-10">
         <thead>
           <tr>
-            <th></th>
-            <th>path</th>
+            <th class="p-1"></th>
+            <th class="p-1">path</th>
             {#each appIds as appId (appId)}
-              <th title={appId}>{appId}</th>
+              <th class="truncate max-w-6" title={appId}>{appId}</th>
             {/each}
           </tr>
         </thead>
         <tbody>
           {#each paths as path (path.id)}
             <tr>
-              <td>
+              <td class="w-3">
                 <button
                   type="button"
                   onclick={() => {
@@ -107,14 +107,14 @@
                   -
                 </button>
               </td>
-              <td>
+              <td class="p-1">
                 <span
-                  class="grow bg-white focus-within:outline-2 outline-blue-400/50 rounded-sm"
+                  class="focus-within:outline-2 outline-blue-400/50 rounded-sm"
                 >
                   <input
                     bind:value={path.value}
                     id={path.id}
-                    class="p-1 border-b border-gray-300 size-full focus:outline-none"
+                    class="p-1 bg-white border-b border-gray-300 size-full focus:outline-none"
                     type="text"
                     autocomplete="off"
                     data-1p-ignore
@@ -137,6 +137,17 @@
               {/await}
             </tr>
           {/each}
+          <tr>
+            <td class="p-1"></td>
+            <td class="p-1">
+              <button
+                type="button"
+                onclick={() => paths.push({ id: uuid(), value: "/" })}
+              >
+                + Add more
+              </button>
+            </td>
+          </tr>
         </tbody>
       </table>
       <!-- <ul class="grid grid-cols-[auto_1fr_auto] gap-1 font-mono">
