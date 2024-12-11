@@ -52,3 +52,7 @@ const { status, stdout, stderr } = await swcutil({
   // ...
 });
 ```
+
+## LICENSE
+
+MIT
