@@ -33,8 +33,8 @@ importers:
         specifier: ^0.52.2
         version: 0.52.2
       tailwindcss:
-        specifier: 4.0.0-beta.7
-        version: 4.0.0-beta.7
+        specifier: 4.0.0-beta.8
+        version: 4.0.0-beta.8
       universal-links-test:
         specifier: workspace:*
         version: link:..
@@ -919,6 +919,9 @@ packages:
   tailwindcss@4.0.0-beta.7:
     resolution: {integrity: sha512-9JXrCC5UVt2bjV9lrjO+B7MPY+bgpWCf5sPbu+Ih5rGvGE6STwA94N6Ah1xMa0Avzp48fB/S1l0vByTp2HEzAw==}
 
+  tailwindcss@4.0.0-beta.8:
+    resolution: {integrity: sha512-21HmdRq9tHDLJZavb2cRBGJxBvRODpwb0/t3tRbMOl65hJE6zG6K6lD6lLS3IOC35u4SOjKjdZiJJi9AuWCf+Q==}
+
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -1730,6 +1733,8 @@ snapshots:
       zimmerframe: 1.1.2
 
   tailwindcss@4.0.0-beta.7: {}
+
+  tailwindcss@4.0.0-beta.8: {}
 
   tapable@2.2.1: {}
 
