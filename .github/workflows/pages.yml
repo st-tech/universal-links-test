@@ -13,8 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
-      - run: pnpm build
-        working-directory: demo
+      - run: pnpm pages
 
       - if: github.event_name == 'push'
         uses: actions/upload-pages-artifact@v3
