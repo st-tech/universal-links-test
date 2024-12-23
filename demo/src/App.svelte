@@ -53,7 +53,8 @@
 <div class="grid grid-rows-[auto_1fr] h-screen divide-y">
   <header class="flex justify-between p-4">
     <h1 class="font-bold">universal-links-test demo</h1>
-    <div class="flex gap-2 items-center">
+    <div class="flex gap-4 items-center">
+      <a href="./docs/">API</a>
       <a
         href="http://github.com/st-tech/apple-app-site-association"
         target="_blank"

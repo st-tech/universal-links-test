@@ -23,7 +23,10 @@
 		"clean": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\"",
 		"prepare": "npm run clean && npm run build",
 		"fmt": "biome check --write .",
-		"check": "biome check ."
+		"check": "biome check .",
+		"pages": "pnpm demo && pnpm doc",
+		"doc": "typedoc --basePath ./ --titleLink 'https://st-tech.github.io/universal-links-test/' --out demo/dist/docs src",
+		"demo": "pnpm --dir demo build"
 	},
 	"keywords": [
 		"aasa",
@@ -42,6 +45,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@types/node": "^22.10.2",
+		"typedoc": "^0.27.5",
 		"typescript": "^5.7.2",
 		"vitest": "^2.1.8"
 	}
