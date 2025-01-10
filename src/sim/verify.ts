@@ -1,5 +1,5 @@
 import { validateAASA } from "../aasa.js";
-import type { CreateVerify, ResultMap, Verify, VerifyResult } from "../types.js";
+import type { CreateVerify, Verify, VerifyResult } from "../types.js";
 import { resolveJson } from "./json.js";
 import { match } from "./match.js";
 
