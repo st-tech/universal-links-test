@@ -1,5 +1,5 @@
 import { validateAASA } from "../aasa.js";
-import type { CreateVerify, ResultMap, Verify } from "../types.js";
+import type { CreateVerify, ResultMap, Verify, VerifyResult } from "../types.js";
 import { resolveJson } from "./json.js";
 import { match } from "./match.js";
 
@@ -10,7 +10,7 @@ export const createVerify: CreateVerify = (json) => {
 		const aasa = await aasaPromise;
 		if (!validateAASA(aasa)) throw new Error("Invalid AASA");
 		const details = aasa.applinks?.details;
-		const ret: ResultMap = new Map();
+		const ret = new Map<string, VerifyResult>();
 		if (!details || details.length === 0) return ret;
 
 		for (const detail of details) {
