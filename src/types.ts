@@ -1,6 +1,6 @@
 export type JsonOrPath = string | Record<string, unknown>;
 export type PromiseOr<T> = T | Promise<T>;
-export type ResultMap = Map<string, VerifyResult>;
+export type ResultMap = ReadonlyMap<string, VerifyResult>;
 export type VerifyResult = "match" | "block";
 
 export type CreateVerify = (
