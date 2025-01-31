@@ -10,12 +10,17 @@ export function match(
 		"?": query = "*",
 		"#": fragment = "*",
 		caseSensitive = true,
-		percentEncoded: _ = true, // TODO: Handle percentEncoded
+		percentEncoded = true,
 	} = components;
-	const urlPathname = url.pathname;
-	const urlFragment = url.hash.slice(1);
-	const urlQuery = url.search.slice(1);
+	let urlPathname = url.pathname;
+	let urlFragment = url.hash.slice(1);
+	let urlQuery = url.search.slice(1);
 
+	if (percentEncoded) {
+		urlPathname = decodeURIComponent(urlPathname);
+		urlFragment = decodeURIComponent(urlFragment);
+		urlQuery = decodeURIComponent(urlQuery);
+	}
 	if (!stringToRegex(fragment, caseSensitive).test(urlFragment)) return false;
 	if (!stringToRegex(path, caseSensitive).test(urlPathname)) return false;
 	if (typeof query === "string") {
