@@ -11,7 +11,12 @@ export function match(
 		"#": fragment = "*",
 		caseSensitive = true,
 		percentEncoded = true,
+		// percentEncoded: _ = true, // TODO: Handle percentEncoded
 	} = components;
+
+	// const urlPathname = url.pathname;
+	// const urlFragment = url.hash.slice(1);
+	// const urlQuery = url.search.slice(1);
 	let urlPathname = url.pathname;
 	let urlFragment = url.hash.slice(1);
 	let urlQuery = url.search.slice(1);
