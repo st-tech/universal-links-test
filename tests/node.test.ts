@@ -180,3 +180,18 @@ it("should handle multiple details", async () => {
 	assert.deepStrictEqual(await verify(json, path), expected);
 	assert.deepStrictEqual(await verifySim(json, path), expected);
 });
+
+it("should handle percentEncoded false", async () => {
+	const json = fromDetails({
+		appID: "HOGE.com.example.app",
+		components: [{ "/": "/search/", percentEncoded: false }],
+	});
+	const path = "/search/%2F";
+	const expected = new Map([["HOGE.com.example.app", "match"]]);
+	const verifyResult = await verify(json, path);
+	const verifySimResult = await verifySim(json, path);
+	console.log("verify result:", verifyResult);
+	console.log("verifySim result:", verifySimResult);
+	assert.deepStrictEqual(await verify(json, path), expected);
+	assert.deepStrictEqual(await verifySim(json, path), expected);
+});
