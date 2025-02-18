@@ -181,10 +181,10 @@ it("should handle multiple details", async () => {
 	assert.deepStrictEqual(await verifySim(json, path), expected);
 });
 
-it("should handle percentEncoded", async () => {
+it("should handle percentEncoded false", async () => {
 	const json = fromDetails({
 		appID: "HOGE.com.example.app",
-		components: [{ "/": "/search/", percentEncoded: true }],
+		components: [{ "/": "/search/", percentEncoded: false }],
 	});
 	const path = "/search/%2F";
 	const expected = new Map();
