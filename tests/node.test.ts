@@ -180,3 +180,15 @@ it("should handle multiple details", async () => {
 	assert.deepStrictEqual(await verify(json, path), expected);
 	assert.deepStrictEqual(await verifySim(json, path), expected);
 });
+
+// TODO: verifyとverifySimの挙動が異なるので挙動をあわせる
+it("should handle percentEncoded false with Unicode", async () => {
+	const json = fromDetails({
+		appID: "HOGE.com.example.app",
+		components: [{ "/": "/search/🌟", percentEncoded: true }],
+	});
+	const path = "/search/%F0%9F%8C%9F"; // Unicode "🌟" のパーセントエンコード表現
+	const expected = new Map();
+	assert.deepStrictEqual(await verify(json, path), expected);
+	assert.deepStrictEqual(await verifySim(json, path), expected);
+});
