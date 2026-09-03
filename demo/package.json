@@ -21,7 +21,7 @@
 	"dependencies": {
 		"@tailwindcss/vite": "4.0.0-beta.7",
 		"lz-string": "^1.5.0",
-		"monaco-editor": "^0.52.2",
+		"monaco-editor": "^0.56.0",
 		"tailwindcss": "4.0.0-beta.7",
 		"universal-links-test": "workspace:*"
 	}
