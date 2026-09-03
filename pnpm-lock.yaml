@@ -53,13 +53,13 @@ importers:
         version: 5.14.0
       svelte-check:
         specifier: ^4.1.1
-        version: 4.1.1(svelte@5.14.0)(typescript@5.7.2)
+        version: 4.1.1(svelte@5.14.0)(typescript@5.9.3)
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
       typescript:
-        specifier: ~5.7.2
-        version: 5.7.2
+        specifier: ~5.9.0
+        version: 5.9.3
       vite:
         specifier: ^6.0.3
         version: 6.0.3(@types/node@22.10.2)(jiti@2.4.1)(lightningcss@1.28.2)(yaml@2.6.1)
@@ -1011,6 +1011,11 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
 
@@ -1828,7 +1833,7 @@ snapshots:
 
   std-env@3.8.0: {}
 
-  svelte-check@4.1.1(svelte@5.14.0)(typescript@5.7.2):
+  svelte-check@4.1.1(svelte@5.14.0)(typescript@5.9.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.1
@@ -1836,7 +1841,7 @@ snapshots:
       picocolors: 1.1.1
       sade: 1.8.1
       svelte: 5.14.0
-      typescript: 5.7.2
+      typescript: 5.9.3
     transitivePeerDependencies:
       - picomatch
 
@@ -1882,6 +1887,8 @@ snapshots:
       yaml: 2.6.1
 
   typescript@5.7.2: {}
+
+  typescript@5.9.3: {}
 
   uc.micro@2.1.0: {}
 
