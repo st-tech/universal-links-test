@@ -1,5 +1,4 @@
-// biome-ignore lint/suspicious/noExplicitAny:
-export function debounce<Args extends any[]>(
+export function debounce<Args extends unknown[]>(
 	fn: (...args: Args) => void,
 	delay: number,
 ): (...args: Args) => void {

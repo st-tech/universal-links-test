@@ -7,24 +7,27 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["dist", "*.svelte"]
+		"includes": ["**", "!**/dist", "!**/*.svelte"]
 	},
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab"
 	},
-	"organizeImports": {
-		"enabled": true
-	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"preset": "recommended"
 		}
 	},
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "double"
+		}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
 		}
 	}
 }

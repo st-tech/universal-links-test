@@ -8,7 +8,8 @@
 		"rootDir": "./src",
 		"declaration": true,
 		"verbatimModuleSyntax": true,
-		"isolatedDeclarations": true
+		"isolatedDeclarations": true,
+		"types": ["node"]
 	},
 	"exclude": ["dist", "tests", "demo", "src/**/*.spec.ts"]
 }

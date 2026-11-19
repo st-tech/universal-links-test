@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as monaco from "monaco-editor";
-  import EditorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
-  import JsonWorker from "monaco-editor/esm/vs/language/json/json.worker?worker";
+  import EditorWorker from "monaco-editor/editor/editor.worker?worker";
+  import JsonWorker from "monaco-editor/language/json/json.worker?worker";
   import { debounce } from "./debounce";
   let ref = $state<HTMLDivElement>();
   let { value = $bindable("") } = $props();
