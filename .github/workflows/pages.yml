@@ -11,12 +11,12 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: ./.github/actions/setup
+      - uses: actions/checkout@v7.0.1
+      - uses: $/.github/actions/setup
       - run: pnpm pages
 
       - if: github.event_name == 'push'
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: demo/dist
 
@@ -33,4 +33,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v5.0.1
