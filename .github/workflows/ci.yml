@@ -8,8 +8,8 @@ jobs:
   check:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: ./.github/actions/setup
+      - uses: actions/checkout@v7.0.1
+      - uses: $/.github/actions/setup
       - run: pnpm check
       - run: pnpm test
       - run: sudo pnpm test
