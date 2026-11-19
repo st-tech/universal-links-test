@@ -1,13 +1,13 @@
 name: Setup Node.js and Install deps
 description: Setup Node.js/pnpm. Install dependencies.
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - run: corepack enable
       shell: bash
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@v7
       with:
-        node-version: 22
+        node-version: 26
         cache: pnpm
     - name: Install deps
       run: pnpm install

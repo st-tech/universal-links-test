@@ -20,25 +20,28 @@ import { verify, type AppleAppSiteAssociation } from "universal-links-test";
 // import { verify, type AppleAppSiteAssociation } from "universal-links-test/sim";
 
 const json = {
-  applinks: {
-    details: [
-      {
-        appID: "APP.ID1",
-        components: [{ "/": "/universal-links/path" }]
-      },
-      {
-        appID: "APP.ID2",
-        components: [{ "/": "/universal-links/path", exclude: true }]
-      },
-      {
-        appID: "APP.ID3",
-        components: []
-      }
-    ]
-  }
+	applinks: {
+		details: [
+			{
+				appID: "APP.ID1",
+				components: [{ "/": "/universal-links/path" }],
+			},
+			{
+				appID: "APP.ID2",
+				components: [{ "/": "/universal-links/path", exclude: true }],
+			},
+			{
+				appID: "APP.ID3",
+				components: [],
+			},
+		],
+	},
 } satisfies AppleAppSiteAssociation;
 
-const result: Map<string, 'match' | 'block'> = await verify(json, "/universal-links/path?query#hash");
+const result: Map<string, "match" | "block"> = await verify(
+	json,
+	"/universal-links/path?query#hash",
+);
 console.log(result.get("APP.ID1")); // 'match' : Universal links are working
 console.log(result.get("APP.ID2")); // 'block' : Universal links are blocked
 console.log(result.get("APP.ID3")); // undefined
@@ -47,9 +50,9 @@ console.log(result.get("APP.ID3")); // undefined
 Use `swcutil` command programmatically:
 
 ```typescript
-import { swcutil } from 'universal-links-test/swcutil';
+import { swcutil } from "universal-links-test/swcutil";
 const { status, stdout, stderr } = await swcutil({
-  // ...
+	// ...
 });
 ```
 
