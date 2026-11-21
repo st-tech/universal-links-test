@@ -43,7 +43,7 @@
 		"url": "git+https://github.com/st-tech/universal-links-test.git"
 	},
 	"license": "MIT",
-	"packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c",
+	"packageManager": "pnpm@12.21.0+sha512.66fd8278ee28935ce951792d34367ff3af5c432a2756445823029533835b8da529bbe0be5130afd56ed0713fb8789e47bad82d93bd5ae2fe54b15562d6276ef0",
 	"devDependencies": {
 		"@biomejs/biome": "^2.6.8",
 		"@types/node": "^26.6.6",
